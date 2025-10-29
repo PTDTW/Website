@@ -53,8 +53,8 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "/avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "唐禹平（糖豆魚）｜PTD",
-	bio: "中華民國新北市，16歲高中生",
+	name: "唐禹平（糖豆魚）",
+	bio: "中華民國新北市，16歲高中生。你可以叫我唐禹平、糖豆魚或PTD。",
 	links: [
 		{
 			name: "Discord",
