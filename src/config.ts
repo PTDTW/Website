@@ -7,8 +7,8 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "糖豆魚｜個人網站",
-	subtitle: "糖豆魚的個人網站",
+	title: "唐禹平（糖豆魚）的個人網站",
+	subtitle: "PTD 的個人網站",
 	lang: "zh_TW", // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
 	themeColor: {
 		hue: 265, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
@@ -53,7 +53,7 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar: "/avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "糖豆魚｜PTD",
+	name: "唐禹平（糖豆魚）｜PTD",
 	bio: "中華民國新北市，16歲高中生",
 	links: [
 		{
