@@ -54,7 +54,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "/avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "糖豆魚｜PTD",
-	bio: "中華民國新北市，15歲國中生",
+	bio: "中華民國新北市，16歲高中生",
 	links: [
 		{
 			name: "Discord",
@@ -67,6 +67,11 @@ export const profileConfig: ProfileConfig = {
 			name: "GitHub",
 			icon: "fa6-brands:github",
 			url: "https://github.com/PTDTW",
+		},
+		{
+			name: "Instagram",
+			icon: "fa6-brands:instagram",
+			url: "https://www.instagram.com/ptd.tw/",
 		},
 	],
 };
