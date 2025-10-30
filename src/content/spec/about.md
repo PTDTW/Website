@@ -24,7 +24,7 @@
 
 #### 團隊經歷
 - (2023-2025) [FlyBirdHost 飛鳥託管](https://flybirdhost.net/) — 共同創辦人
-- (2025-2025) [Novainit Studio](https://novainit.studio/) — 創辦人
+- (2024-2025) [Novainit Studio](https://novainit.studio/) — 創辦人
 - (2025-2025) [築夢之地工作室](https://dreamland-studio.org/) — 創辦人
 - (2025-2025) [Taicoolah 台酷拉](https://taicoolah.com/) — 共同創辦人
 - (2025-2025) [會考霸團隊](https://kaobar.dreamland-studio.org/) — 創辦人
