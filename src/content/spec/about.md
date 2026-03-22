@@ -27,7 +27,7 @@
 - (2026/03-2026) [第五屆eP校園大使](https://flybirdhost.net/) — 活動執行組
 - (2025/09-2026) [三重商工第五四屆班聯會](https://www.instagram.com/scvs54th/) — 成員
 - (2025/09-2026) [Discord備考備戰課業討論](https://discord.gg/mMuJaHGjmx) — 開發成員
-- (2025/09-2026) [Instagram 117統測倒數](https://www.instagram.com/117_tcte_countdown/) — 協助小編
+- (2025/09-2026) [Instagram 117統測倒數](https://www.instagram.com/117_tcte_/) — 協助小編
 
 
 
