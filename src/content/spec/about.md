@@ -24,18 +24,18 @@
 - 2025 — 三重商工國語文靜態競賽／商科高一 演說 => 第三名
 
 #### 參與經歷
-- (2026/03-2026) [第五屆eP校園大使](https://flybirdhost.net/) — 活動執行組
-- (2025/09-2026) [三重商工第五四屆班聯會](https://www.instagram.com/scvs54th/) — 成員
-- (2025/09-2026) [Discord備考備戰課業討論](https://discord.gg/mMuJaHGjmx) — 開發成員
-- (2025/09-2026) [Instagram 117統測倒數](https://www.instagram.com/117_tcte_/) — 協助小編
+- (2026/03-NOW) [第五屆eP校園大使](https://flybirdhost.net/) — 活動執行組
+- (2025/09-NOW) [三重商工第五四屆班聯會](https://www.instagram.com/scvs54th/) — 成員
+- (2025/09-NOW) [Discord備考備戰課業討論](https://discord.gg/mMuJaHGjmx) — 開發成員
+- (2025/09-NOW) [Instagram 117統測倒數](https://www.instagram.com/117_tcte_/) — 協助小編
 
 
 
 #### 團隊經歷
-- (2023-2026) [FlyBirdHost 飛鳥託管](https://flybirdhost.net/) — 共同創辦人兼行政長
-- (2025-2026) [Taicoolah 台酷拉](https://taicoolah.com/) — 共同創辦人
-- (2024-2026) [Novainit Studio](https://novainit.studio/) — 創辦人
-- (2025-2026) [築夢之地工作室](https://dreamland-studio.org/) — 創辦人
-- (2025-2026) [會考霸團隊](https://kaobar.dreamland-studio.org/) — 創辦人
-- (2025-2026) [酷(Cool)歷程](https://coollc.dreamland-studio.org/) — 創辦人
-- (2026/02-2026) [Darkness Lovers 樂團](https://www.instagram.com/darkness_lovers.official/) — 團隊成員
+- (2023-NOW) [FlyBirdHost 飛鳥託管](https://flybirdhost.net/) — 共同創辦人兼行政長
+- (2025-NOW) [Taicoolah 台酷拉](https://taicoolah.com/) — 共同創辦人
+- (2024-NOW) [Novainit Studio](https://novainit.studio/) — 創辦人
+- (2025-NOW) [築夢之地工作室](https://dreamland-studio.org/) — 創辦人
+- (2025-NOW) [會考霸團隊](https://kaobar.dreamland-studio.org/) — 創辦人
+- (2025-NOW) [酷(Cool)歷程](https://coollc.dreamland-studio.org/) — 創辦人
+- (2026/02-NOW) [Darkness Lovers 樂團](https://www.instagram.com/darkness_lovers.official/) — 團隊成員
