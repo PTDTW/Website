@@ -22,20 +22,23 @@
 - 2023 — 新北市112學年度中小學科學展覽會／生活應用科（三） => 特優國展  
 - 2024 — 中華民國第64屆全國中小學科學展覽會／生活應用科（三）=> 佳作
 - 2025 — 三重商工國語文靜態競賽／商科高一 演說 => 第三名
+- 2026 — 三重商工國共讀心得競賽／商科高一 => 第一名
+- 2026 — 慧治教育協會 金質歷程獎 => ePeer 金質獎
 
 #### 參與經歷
 - (2026/03~現在) [第五屆eP校園大使](https://flybirdhost.net/) — 活動執行組
 - (2025/09~現在) [三重商工第五四屆班聯會](https://www.instagram.com/scvs54th/) — 成員
 - (2025/09~現在) [Discord備考備戰課業討論](https://discord.gg/mMuJaHGjmx) — 開發成員
 - (2025/09~現在) [Instagram 117統測倒數](https://www.instagram.com/117_tcte_/) — 協助小編
+- (2025/09~2026/07) [第三屆 新北技職VSR永續計畫](https://tve.ntpc.edu.tw/Detail/Announcement_View?ANN_ID=1AEE8EACCB41C878DF9E9DFD34F924EA) — 參與學生
 
 
 
 #### 團隊經歷
 - (2023~現在) [FlyBirdHost 飛鳥託管](https://flybirdhost.net/) — 共同創辦人兼行政長
-- (2025~現在) [Taicoolah 台酷拉](https://taicoolah.com/) — 共同創辦人
 - (2024~現在) [Novainit Studio](https://novainit.studio/) — 創辦人
 - (2025~現在) [築夢之地工作室](https://dreamland-studio.org/) — 創辦人
 - (2025~現在) [會考霸團隊](https://kaobar.dreamland-studio.org/) — 創辦人
-- (2025~現在) [酷(Cool)歷程](https://coollc.dreamland-studio.org/) — 創辦人
-- (2026/02~現在) [Darkness Lovers 樂團](https://www.instagram.com/darkness_lovers.official/) — 團隊成員
+- (2026~現在) [酷(Cool)歷程](https://coollc.dreamland-studio.org/) — 創辦人
+- (2026~現在) [TWcampus](https://twcampus.org/) — 首席公關
+<!-- - (2026/02~現在) [Darkness Lovers 樂團](https://www.instagram.com/darkness_lovers.official/) — 團隊成員 -->
