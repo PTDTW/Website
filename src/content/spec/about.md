@@ -30,7 +30,7 @@
 - (2025/09~現在) [三重商工第五四屆班聯會](https://www.instagram.com/scvs54th/) — 成員
 - (2025/09~現在) [Discord備考備戰課業討論](https://discord.gg/mMuJaHGjmx) — 開發成員
 - (2025/09~現在) [Instagram 117統測倒數](https://www.instagram.com/117_tcte_/) — 協助小編
-- (2025/09~2026/07) [第三屆 新北技職VSR永續計畫](https://tve.ntpc.edu.tw/Detail/Announcement_View?ANN_ID=1AEE8EACCB41C878DF9E9DFD34F924EA) — 參與學生
+- (2025/09~2026/07) [第三屆 新北技職VSR永續計畫](https://tve.ntpc.edu.tw/Detail/Announcement_View?ANN_ID=1AEE8EACCB41C878DF9E9DFD34F924EA) — 「從故事開始的理財課」 企劃參與學生
 
 
 
