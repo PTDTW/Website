@@ -81,13 +81,14 @@ const bannerOffset =
 		<title>{pageTitle}</title>
 
 		<meta charset="UTF-8" />
-		<meta name="description" content="沒什麼東西，就是一個熱愛分享、傳播、教育、資訊的高中生在發瘋。">
+		<meta name="description" content="一位熱愛探索、發現的高中生，正在嘗試開發產品，也在學怎麼把世界做得更好用一點，用雙手慢慢締造新的教育環境。">
 		<meta name="author" content={profileConfig.name}>
 
+		<meta property="og:image" content="/og.png">
 		<meta property="og:site_name" content={siteConfig.title}>
 		<meta property="og:url" content={Astro.url}>
 		<meta property="og:title" content={pageTitle}>
-		<meta property="og:description" content="沒什麼東西，就是一個熱愛分享、傳播、教育、資訊的高中生在發瘋。">
+		<meta property="og:description" content="一位熱愛探索、發現的高中生，正在嘗試開發產品，也在學怎麼把世界做得更好用一點，用雙手慢慢締造新的教育環境。">
 		<!-- <meta property="og:description" content={description || pageTitle}> -->
 		{setOGTypeArticle ? (
         <meta property="og:type" content="article" />
