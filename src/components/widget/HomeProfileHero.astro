@@ -1,0 +1,41 @@
+---
+import { Icon } from "astro-icon/components";
+import { profileConfig } from "../../config";
+import ImageWrapper from "../misc/ImageWrapper.astro";
+
+const config = profileConfig;
+const details = config.details ?? [];
+---
+<div class="card-base p-6 mb-6 transition duration-300">
+    <div class="flex flex-col gap-6 lg:gap-8">
+        <!-- <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <div class="flex items-start gap-4">
+                <div class="space-y-2">
+                    <div class="text-3xl font-semibold text-neutral-950 dark:text-white">{config.name}</div>
+                    {config.title && <div class="text-sm font-medium text-[var(--primary)]">{config.title}</div>}
+                    <div class="text-sm text-neutral-600 dark:text-neutral-300 leading-6 max-w-2xl">{config.bio}</div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+                {config.links.map((link) => (
+                    <a href={link.url} target="_blank" rel="noreferrer" class="btn-regular rounded-[var(--radius-small)] px-4 py-2 gap-2 inline-flex items-center">
+                        <Icon name={link.icon} class="text-lg" />
+                        <span>{link.name}</span>
+                    </a>
+                ))}
+            </div>
+        </div> -->
+
+        {details.length > 0 && (
+            <div class="grid gap-3 sm:grid-cols-3">
+                {details.map((item) => (
+                    <div class="rounded-[var(--radius-small)] border border-[var(--card-border)] bg-[var(--card-bg)] p-4">
+                        <div class="text-[0.7rem] uppercase tracking-[0.3em] text-neutral-500 dark:text-neutral-400">{item.label}</div>
+                        <div class="mt-2 text-lg font-semibold text-neutral-950 dark:text-white">{item.value}</div>
+                    </div>
+                ))}
+            </div>
+        )}
+    </div>
+</div>

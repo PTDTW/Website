@@ -54,7 +54,13 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
 	avatar: "/avatar.jpg", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
 	name: "唐禹平（糖豆魚）",
-	bio: "中華民國新北市，16歲高中生。你可以叫我唐禹平、糖豆魚或PTD。",
+	title: "熱愛分享的高中生",
+	bio: "中華民國新北市，16歲高中生。你可以叫我唐禹平、糖豆魚或PTD。喜歡程式、寫作與分享學習心得。",
+	details: [
+		{ label: "目前身份", value: "高中生" },
+		{ label: "興趣", value: "程式、教育" },
+		{ label: "據點", value: "地球" },
+	],
 	links: [
 		{
 			name: "Discord",

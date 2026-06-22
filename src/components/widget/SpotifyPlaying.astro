@@ -1,0 +1,74 @@
+---
+import { Icon } from "astro-icon/components";
+---
+<div class="card-base p-4 transition duration-300" id="spotify-widget">
+    <div class="flex items-center gap-3">
+        <div class="flex h-12 w-12 items-center justify-center rounded-full bg-[#1DB954] text-white">
+            <Icon name="fa6-brands:spotify" class="text-2xl" />
+        </div>
+        <div>
+            <div class="text-sm font-bold text-neutral-950 dark:text-white">Spotify</div>
+            <div class="text-xs uppercase tracking-[0.25em] text-neutral-500 dark:text-neutral-400">Now playing</div>
+        </div>
+    </div>
+
+    <div id="spotify-content" class="mt-4">
+        <div class="rounded-[var(--radius-small)] border border-[var(--card-border)] bg-[var(--card-bg)] p-4 text-sm text-neutral-500 dark:text-neutral-400">
+            加載中...
+        </div>
+    </div>
+</div>
+
+<script>
+  async function fetchSpotifyData() {
+    try {
+      const response = await fetch('/api/spotify/');
+      const data = await response.json();
+
+      const contentDiv = document.getElementById('spotify-content');
+      if (!contentDiv) return;
+
+      if (data.error || !data.is_playing || !data.track) {
+        contentDiv.innerHTML = `
+          <div class="rounded-[var(--radius-small)] border border-[var(--card-border)] bg-[var(--card-bg)] p-4 text-sm text-neutral-500 dark:text-neutral-400">
+            目前沒有正在播放的 Spotify 曲目。
+          </div>
+        `;
+        return;
+      }
+
+      contentDiv.innerHTML = `
+        <a href="${data.url}" target="_blank" rel="noreferrer" class="group block rounded-[var(--radius-small)] overflow-hidden border border-[var(--card-border)] bg-[var(--card-bg)] transition hover:shadow-lg">
+          ${data.image ? `<div class="h-40 overflow-hidden">
+              <img src="${data.image}" alt="Album cover" class="object-cover w-full h-full transition duration-300 group-hover:scale-105" />
+            </div>` : ''}
+          <div class="p-4">
+            <div class="text-sm font-semibold text-neutral-950 dark:text-white">${data.track}</div>
+            <div class="text-sm text-neutral-500 dark:text-neutral-400">${data.artist}</div>
+            ${data.album ? `<div class="mt-2 text-xs text-neutral-500 dark:text-neutral-400">${data.album}</div>` : ''}
+          </div>
+        </a>
+      `;
+    } catch (error) {
+      console.error('Failed to fetch Spotify data:', error);
+      const contentDiv = document.getElementById('spotify-content');
+      if (contentDiv) {
+        contentDiv.innerHTML = `
+          <div class="rounded-[var(--radius-small)] border border-[var(--card-border)] bg-[var(--card-bg)] p-4 text-sm text-neutral-500 dark:text-neutral-400">
+            無法連接 Spotify。
+          </div>
+        `;
+      }
+    }
+  }
+
+  // Fetch on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fetchSpotifyData);
+  } else {
+    fetchSpotifyData();
+  }
+
+  // Refresh every 30 seconds
+  setInterval(fetchSpotifyData, 30000);
+</script>

@@ -20,6 +20,9 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
+	server: {
+		host: true,
+	},
 	site: "https://www.ptdtw.fun/",
 	base: "/",
 	trailingSlash: "always",
