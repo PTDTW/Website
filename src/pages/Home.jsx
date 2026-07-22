@@ -143,7 +143,7 @@ const HeroSection = () => {
 
 
         {/* Header Info */}
-        <div className="abs left:30px left:25%@<md bottom:-85px bottom:-285px@<md flex jc:space-between flex:col@<md ai:end z:10">
+        <div className="abs left:30px left:25%@<md right:30px@>md bottom:-85px bottom:-285px@<md flex jc:space-between flex:col@<md ai:end z:10">
 
           {/* 左側 Avatar + Info */}
           <div className="flex flex:col@<md ai:end ai:center@<md gap:10px">
@@ -314,13 +314,13 @@ const ActiveAboutSection = () => {
       <div className="mt:18px">
         <div
           className="flex flex:col@<md gap:12px h:320px h:800px@<md"
-          onMouseLeave={() => setActive(null)}
         >
           {ActiveAboutCard.map((card, i) => (
             <div
               key={i}
               className="rel overflow:hidden r:18px cursor:pointer"
               onMouseEnter={() => setActive(i)}
+              onMouseLeave={() => setActive(null)}
               style={{
                 flexGrow:
                   active === null
