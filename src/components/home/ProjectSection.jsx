@@ -1,7 +1,7 @@
 import React from "react";
 import SectionTitle from "./SectionTitle";
 
-const projectCards = [
+const ProjectCards = [
   {
     title: "Twcampus",
     subtitle: "首席公關",
@@ -54,21 +54,57 @@ const projectCards = [
 
 const ProjectSection = () => {
   return (
-    <section className="home-card">
-      <SectionTitle title="作品或專案" />
-      <div className="home-project-grid">
-        {projectCards.map((card, index) => (
-          <article key={index} className="home-project-card" style={{ gridColumn: `span ${card.col}`, gridRow: `span ${card.row}` }}>
-            <img src={card.image} alt={card.title} className="home-project-image" />
-            <div className="home-project-overlay" />
-            <div className="home-project-content">
-              <h3>{card.title}</h3>
-              <p>{card.subtitle}</p>
-            </div>
-          </article>
-        ))}
+    <div className="bg:#121212 font:#fff mt:5px py:22px px:22px rb:0px">
+      <div className="font-weight:bold bl:3px|solid|#fff pl:8px f:18px">
+        作品或專案
       </div>
-    </section>
+
+      <div className="mt:18px"></div>
+      <div className="project-grid grid gap:12px">
+        {
+          ProjectCards.map((card, i) => (
+            <div
+              key={i}
+              className="rel overflow:hidden r:22px cursor:pointer translateY(-16px):hover ~all|0.4s"
+              style={{
+                gridColumn: `span ${card.col}`,
+                gridRow: `span ${card.row}`,
+              }}
+            >
+
+              <img
+                src={card.image}
+                className="abs inset:0 w:full h:full object-fit:cover" />
+              <div
+                className="abs inset:0"
+                style={{
+                  background:
+                    "linear-gradient(180deg,transparent,rgba(0,0,0,.8))"
+                }}
+              />
+
+
+              <div
+                className="abs left:20px bottom:20px color:white"
+              >
+
+                <div className="f:26px font-weight:bold">
+                  {card.title}
+                </div>
+
+                <div className="f:14px opacity:.7">
+                  {card.subtitle}
+                </div>
+
+              </div>
+
+            </div>
+
+          ))
+        }
+
+      </div>
+    </div>
   );
 };
 

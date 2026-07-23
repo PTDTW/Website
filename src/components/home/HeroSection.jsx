@@ -3,71 +3,257 @@ import React, { useState } from "react";
 const banners = [
   {
     image: "/images/banner.webp",
-    text: "傳遞的不只是知識，而是下一個可能。｜「從故事開始的理財課」新北技職vsr計畫 • 2026/04/15。",
+    text: "傳遞的不只是知識，而是下一個可能 ｜「從故事開始的理財課」新北技職vsr計畫 • 2026/04/15。",
+    fit: "cover",
+    position: "50% 50%",
   },
   {
     image: "/images/banner02.png",
-    text: "緣分總是令人欣慰又感嘆｜「曾經」與好友一同遊玩的Minecraft伺服器剪影 • 2024/06/19",
+    text: "緣分總是令人欣慰又感嘆 ｜「曾經」與好友一同遊玩的Minecraft伺服器剪影 • 2024/06/19",
+    fit: "cover",
+    position: "50% 50%",
   },
+  {
+    image: "/images/banner03.jpg",
+    text: "前進，永遠都不是一夕之間｜ptd.study讀書帳，圖片 • 2025/10/06 ",
+    fit: "cover",
+    position: "50% 70%",
+  },
+  {
+    image: "/images/banner04.jpg",
+    text: "旻，讓人想起無邊的天際 ｜日本—羊蹄山 • 2024/01/24 ",
+    fit: "cover",
+    position: "50% 45%",
+  },
+  {
+    image: "/images/banner05.jpg",
+    text: "日落後，要好好休息喔 ｜泰國餐廳 • 2025/08/11 ",
+    fit: "cover",
+    position: "50% 50%",
+  }
 ];
 
 const HeroSection = () => {
   const [hoverName, setHoverName] = useState(false);
-  const [flipped, setFlipped] = useState(false);
-  const [banner] = useState(() => banners[Math.floor(Math.random() * banners.length)]);
-
+  const [expand, setExpand] = useState(false);
+  const [banner] = useState(() => {
+    const index = Math.floor(Math.random() * banners.length);
+    return banners[index];
+  });
   return (
-    <section className="home-hero-card">
-      <div className="home-hero-banner">
-        <img src={banner.image} alt="個人封面" className="home-hero-image" />
-        <div className="home-hero-overlay" />
-        <div className="home-hero-caption">{banner.text}</div>
+    <>
+      {/* <div className="h:250px w:100% overflow:hidden flex items:center justify:center mt:30px mx:auto r:10px b:1.2px|solid|#333">
+          <img
+            src="/images/banner.jpg"
+            alt=""
+            className="w:full h:full object-fit:cover"
+          />
+        </div> */}
+      <div className="rel mt:30px">
+        {/* Hero */}
+        <div
+          className="
+            rel
+            w:100%
+            overflow:hidden
+            rt:10px
+            cursor:pointer
+          "
+          style={{
+            height: expand ? "600px" : "260px",
+            transition: "height .45s cubic-bezier(.2,.8,.2,1)",
+          }}
+          onMouseEnter={() => setExpand(true)}
+          onMouseLeave={() => setExpand(false)}
+        >
+
+          {/* Image */}
+          <img
+            src={banner.image}
+            className="w:full h:full object-fit:cover block"
+            style={{
+              objectPosition: banner.position,
+              transform: expand
+                ? "scale(1.05)"
+                : "scale(1)",
+              transition:
+                "transform .8s cubic-bezier(.2,.8,.2,1)",
+            }}
+          />
+
+
+          {/* Gradient */}
+          <div
+            className="
+              abs
+              inset:0
+              pointer-events:none
+            "
+            style={{
+              background:
+                "linear-gradient(170deg,transparent 45%,rgba(0,0,0,.75))"
+            }}
+          />
+
+
+          {/* Caption */}
+          <div
+            className="
+              abs
+              right:10px
+              bottom:8px
+              f:#fff
+              z:2
+              f:12px
+              f:10px@<md
+              f:8px@<sm
+            "
+          >
+            {banner.text}
+          </div>
+
+
+          {/* Hover Hint */}
+          <div
+            className="
+              abs
+              left:50%
+              bottom:5%
+              z:3
+              color:white
+            "
+            style={{
+              transform:
+                "translate(-50%,-50%)",
+              opacity: expand ? 0 : 1,
+              transition: "opacity .3s",
+              pointerEvents: "none",
+            }}
+          >
+
+            <div
+              className="
+                px:15px
+                py:10px
+                r:999px
+                bg:#ffffff22
+                backdrop-filter:blur(10px)
+                f:15px
+              "
+            >
+              滑鼠探索 ↓
+            </div>
+
+          </div>
+        </div>
+
+
+        {/* Header Info */}
+        <div className="abs left:30px right:30px left:0px@<md right:0px@<md mx:auto@<md bottom:-85px bottom:-295px@<md flex flex:col@<md jc:space-between jc:center@<md ai:center gap:20px@<md z:10">
+
+          {/* 左側 Avatar + Info */}
+          <div className="flex flex:col@<md ai:end ai:center@<md gap:10px">
+            {/* Avatar */}
+            <div
+              className="w:120px h:120px rel"
+              style={{
+                perspective: "800px"
+              }}
+            >
+              <div
+                className="mt:-20px ml:-20px w:150px h:150px flex ai:center jc:center"
+                onMouseEnter={(e) => {
+                  e.currentTarget.querySelector(".avatar-card").style.transform = "rotateY(-180deg)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.querySelector(".avatar-card").style.transform = "rotateY(0deg)";
+                }}
+              >
+                <div
+                  className="avatar-card w:120px h:120px rel transition:500ms"
+                  style={{
+                    transformStyle: "preserve-3d"
+                  }}
+                >
+
+                  {/* 正面 */}
+                  <img
+                    src="/Avatars/avatar05.jpg"
+                    className="abs w:full h:full r:100% b:4px|solid|#050505 bg:white object-fit:cover"
+                    style={{
+                      backfaceVisibility: "hidden"
+                    }}
+                  />
+
+                  {/* 背面 */}
+                  <img
+                    src="/Avatars/avatar05-bg.png"
+                    className="abs w:full h:full r:100% b:4px|solid|#050505 bg:white object-fit:cover"
+                    style={{
+                      backfaceVisibility: "hidden",
+                      transform: "rotateY(180deg)"
+                    }}
+                  />
+
+                </div>
+              </div>
+            </div>
+
+            {/* Basic Info */}
+            <div className="pb:10px color:white">
+              <div className="rel mt:4px flex flex:col f:26px overflow:hidden text:center@<md" onMouseEnter={() => setHoverName(true)} onMouseLeave={() => setHoverName(false)}>
+                <div
+                  className="abs"
+                  style={{
+                    transform: hoverName
+                      ? "translateY(0)"
+                      : "translateY(-100%)",
+                    transition: "300ms"
+                  }}
+                >
+                  糖豆魚
+                </div>
+
+                {/* 原文字 */}
+                <div
+                  style={{
+                    transform: hoverName
+                      ? "translateY(100%)"
+                      : "translateY(0)",
+                    transition: "300ms"
+                  }}
+                >
+                  唐禹平
+                </div>
+              </div>
+              <span className="f:#888 f:16px">@ptd.tw • <span className="f:13">程式開發／教育／社會責任／學習歷程</span></span>
+            </div>
+          </div>
+
+          {/* 右側 Social */}
+          <div className="flex gap:15px pt:45px pt:0px@<md">
+            <a
+              href="https://github.com/ptdtw"
+              className="flex ai:center jc:center p:10px p:8px@<lg px:15px px:10px@<lg f:15px@<md r:999px bg:#ffffff15 backdrop-filter:blur(10px) b:1px|solid|#ffffff22 f:#fff text-decoration:none"
+            >
+              <i class="bi bi-github"></i>
+              &nbsp;&nbsp;Github
+            </a>
+
+            <a
+              href="https://instagram.com/ptd.tw_"
+              className="flex ai:center jc:center p:10px p:8px@<lg px:15px px:10px@<lg f:15px@<md r:999px bg:#ffffff15 backdrop-filter:blur(10px) b:1px|solid|#ffffff22 f:#fff text-decoration:none"
+            >
+              <i class="bi bi-instagram"></i>
+              &nbsp;&nbsp;Instagram
+            </a>
+          </div>
+        </div>
       </div>
 
-      <div className="home-hero-profile">
-        <div className="home-avatar-wrap">
-          <div
-            className={`home-avatar-card ${flipped ? "is-flipped" : ""}`}
-            onMouseEnter={() => setFlipped(true)}
-            onMouseLeave={() => setFlipped(false)}
-          >
-            <img src="/Avatars/avatar05.jpg" alt="唐禹平正面" className="home-avatar-face" />
-            <img src="/Avatars/avatar05-bg.png" alt="唐禹平背面" className="home-avatar-back" />
-          </div>
-        </div>
-
-        <div className="home-profile-info">
-          <div
-            className="home-name-switch"
-            onMouseEnter={() => setHoverName(true)}
-            onMouseLeave={() => setHoverName(false)}
-          >
-            <span className={`home-name-text ${hoverName ? "is-active" : ""}`}>糖豆魚</span>
-            <span className={`home-name-text ${hoverName ? "" : "is-active"}`}>唐禹平</span>
-          </div>
-          <div className="home-profile-meta">
-            <span>@ptd.tw</span>
-            <span>程式開發／教育／社會責任／學習歷程</span>
-          </div>
-        </div>
-
-        <div className="home-social-links">
-          <a href="https://github.com/ptdtw" target="_blank" rel="noreferrer" className="home-social-pill">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-            </svg>
-            <span>Github</span>
-          </a>
-          <a href="https://instagram.com/ptd.tw_" target="_blank" rel="noreferrer" className="home-social-pill">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
-            </svg>
-            <span>Instagram</span>
-          </a>
-        </div>
-      </div>
-    </section>
-  );
+      {/* 往下推 */}
+      <div className="h:80px h:280px@<md bg:#121212 mt:4px pb:20px rb:0px" />
+    </>)
 };
 
 export default HeroSection;
