@@ -33,7 +33,7 @@ const ContactSection = () => {
   return (
     <>
       <div
-        className="flex flex:col@<md gap:5px gap:0px@<md"
+        className="grid grid-cols:2 grid-cols:1@<md gap:5px gap:0px@<md"
       >
         {/* 左側 */}
         <div className="bg:#121212 font:#fff mt:5px py:22px px:22px rbl:10px rbl:0px@<md">

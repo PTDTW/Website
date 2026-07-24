@@ -8,6 +8,9 @@ import Other from './pages/other';
 // News
 // import News from './pages/news';
 
+import NotFound from './pages/error/404';
+
+
 const Router = () => {
   return (
     // <BrowserRouter >
@@ -17,6 +20,9 @@ const Router = () => {
         <Route path='/teams' element={<MyTeams />} />
         {/* <Route path='/exchange' element={<Exchange />} /> */}
         <Route path='/other' element={<Other />} />
+
+        {/* error */}
+        <Route path="*" element={<NotFound />} />
 
         {/* News */}
         {/* <Route path='/news/:date' element={<News />} /> */}
