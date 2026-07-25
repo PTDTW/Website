@@ -22,7 +22,7 @@ const ExperienceSectionCard = [
     subtitle: "第六屆金質歷程獎",
     desc: "透過第六屆金質歷程獎的機會，在台上重新介紹個人學習歷程得獎作品，並講述歷程以及心得感想。",
     image: "/Experience/gapc.jpg",
-    position: "left",
+    position: "center",
     rwdPosition: "50% 50%"
   },
   {

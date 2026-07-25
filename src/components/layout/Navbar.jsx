@@ -25,6 +25,11 @@ const datas = [{
   name: "其他東西",
   icon: "archive",
   route: "/other"
+},
+{
+  name: "文章",
+  icon: "journal-text",
+  route: "/posts"
 }];
 
 const links = [{

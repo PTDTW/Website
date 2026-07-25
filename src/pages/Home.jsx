@@ -1,5 +1,6 @@
 "use client";
 import React, { Fragment, useState, useEffect, useLayoutEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 // import ReactMarkdown from 'react:markdown';
 import MarkdownViewer from "@/components/Reader/MarkdownViewer"
 import { Timeline, Event } from "react-timeline-scribble";
@@ -18,6 +19,55 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
+
+const postModules = import.meta.glob('../../public/Markdown/*.md', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+});
+
+const parseFrontmatter = (content) => {
+  const match = content.match(/^---\s*\n([\s\S]*?)\n---\s*\n?/);
+  if (!match) return { meta: {}, body: content };
+
+  const metaLines = match[1].split('\n');
+  const meta = {};
+
+  metaLines.forEach((line) => {
+    const [key, ...rest] = line.split(':');
+    if (!key || !rest.length) return;
+    const value = rest.join(':').trim();
+    meta[key.trim()] = value.replace(/^['"]|['"]$/g, '');
+  });
+
+  return {
+    meta,
+    body: content.replace(match[0], ''),
+  };
+};
+
+const posts = Object.entries(postModules)
+  .map(([filePath, content]) => {
+    const fileName = filePath.split('/').pop()?.replace(/\.md$/, '') || 'post';
+    const { meta, body } = parseFrontmatter(content);
+    const title = meta.title || fileName.replace(/-/g, ' ');
+    const preview = String(body)
+      .replace(/^#\s*/gm, '')
+      .split('\n')
+      .filter(Boolean)
+      .slice(0, 3)
+      .join(' ')
+      .slice(0, 140);
+
+    return {
+      slug: fileName,
+      title,
+      date: meta.date || '',
+      tags: meta.tags ? meta.tags.split(',').map((tag) => tag.trim()).filter(Boolean) : [],
+      preview: preview ? `${preview}...` : '閱讀更多內容',
+    };
+  })
+  .sort((a, b) => a.title.localeCompare(b.title));
 
 // const TimelineData = [
 //   {
@@ -248,6 +298,33 @@ const HomeView = () => {
       <BioSection />
       <ExperienceSection />
       <ProjectSection />
+
+      {posts.length > 0 && (
+        <section className="mt:25px px:20px bg:#121212 font:#fff mt:5px py:22px px:22px r:10px">
+          <div className="font-weight:bold bl:3px|solid|#fff pl:8px f:18px">
+            最新文章
+          </div>
+          <div className="flex flex:col gap:12px mt:18px">
+            {posts.map((post) => (
+              <Link
+                key={post.slug}
+                to={`/posts/${post.slug}`}
+                className="p:16px r:10px bg:#1e1e1e b:1px|solid|#2f2f2f text-decoration:none"
+              >
+                <div className="font-weight:bold f:#fff">{post.title}</div>
+                {post.date && <div className="f:#999 mt:6px">{post.date}</div>}
+                {post.tags.length > 0 && (
+                  <div className="f:#7dd3fc mt:8px">
+                    {post.tags.map((tag) => `#${tag}`).join(' ')}
+                  </div>
+                )}
+                {/* <div className="f:#999 mt:8px">{post.preview}</div> */}
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
       <ContactSection />
       <div className="my:25px"></div>
     </div>

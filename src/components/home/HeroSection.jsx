@@ -178,7 +178,7 @@ const HeroSection = () => {
 
                   {/* 正面 */}
                   <img
-                    src="/Avatars/avatar05.jpg"
+                    src="/Avatars/avatar06.jpg"
                     className="abs w:full h:full r:100% b:4px|solid|#050505 bg:white object-fit:cover"
                     style={{
                       backfaceVisibility: "hidden"

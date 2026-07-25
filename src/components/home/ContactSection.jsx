@@ -33,10 +33,10 @@ const ContactSection = () => {
   return (
     <>
       <div
-        className="grid grid-cols:2 grid-cols:1@<md gap:5px gap:0px@<md"
+        className="mt:25px grid grid-cols:2 grid-cols:1@<md gap:5px gap:0px@<md"
       >
         {/* 左側 */}
-        <div className="bg:#121212 font:#fff mt:5px py:22px px:22px rbl:10px rbl:0px@<md">
+        <div className="bg:#121212 font:#fff py:22px px:22px rtl:10px rbl:10px rbl:0px@<md">
           <div className="font-weight:bold bl:3px|solid|#fff pl:8px f:18px">
             個人動態
           </div>
@@ -139,7 +139,7 @@ const ContactSection = () => {
         </div>
 
         {/* 右側 */}
-        <div className="bg:#121212 font:#fff mt:5px py:22px px:22px rbr:10px rb:10px@<md">
+        <div className="bg:#121212 font:#fff py:22px px:22px rtr:10px rbr:10px rb:10px@<md">
           <div className="font-weight:bold bl:3px|solid|#fff pl:8px f:18px">
             聯絡我
           </div>

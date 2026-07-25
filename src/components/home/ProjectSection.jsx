@@ -54,7 +54,7 @@ const ProjectCards = [
 
 const ProjectSection = () => {
   return (
-    <div className="bg:#121212 font:#fff mt:5px py:22px px:22px rb:0px">
+    <div className="bg:#121212 font:#fff mt:5px py:22px px:22px rb:10px">
       <div className="font-weight:bold bl:3px|solid|#fff pl:8px f:18px">
         作品或專案
       </div>

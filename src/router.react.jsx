@@ -5,6 +5,7 @@ import MyProjects from './pages/myProjects';
 import MyTeams from './pages/myTeams';
 import Exchange from './pages/exchanges';
 import Other from './pages/other';
+import PostPage from './pages/Post';
 // News
 // import News from './pages/news';
 
@@ -20,6 +21,8 @@ const Router = () => {
         <Route path='/teams' element={<MyTeams />} />
         {/* <Route path='/exchange' element={<Exchange />} /> */}
         <Route path='/other' element={<Other />} />
+        <Route path='/posts' element={<PostPage />} />
+        <Route path='/posts/:slug' element={<PostPage />} />
 
         {/* error */}
         <Route path="*" element={<NotFound />} />
