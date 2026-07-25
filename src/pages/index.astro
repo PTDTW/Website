@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// home componenets
+import HeroSection from "../components/home/HeroSection";
+import BioSection from "../components/home/BioSection";
+import ExperienceSection from "../components/home/ExperienceSection";
+import ProjectSection from "../components/home/ProjectSection";
+import ContactSection from "../components/home/ContactSection";
+
+
+const banners = [
+  {
+    image: "/images/banner.webp",
+    text: "傳遞的不只是知識，而是下一個可能 ｜「從故事開始的理財課」新北技職vsr計畫 • 2026/04/15。",
+    fit: "cover",
+    position: "50% 50%",
+  },
+  {
+    image: "/images/banner02.png",
+    text: "緣分總是令人欣慰又感嘆 ｜「曾經」與好友一同遊玩的Minecraft伺服器剪影 • 2024/06/19",
+    fit: "cover",
+    position: "50% 50%",
+  },
+  {
+    image: "/images/banner03.jpg",
+    text: "前進，永遠都不是一夕之間｜ptd.study讀書帳，圖片 • 2025/10/06 ",
+    fit: "cover",
+    position: "50% 70%",
+  },
+  {
+    image: "/images/banner04.jpg",
+    text: "旻，讓人想起無邊的天際 ｜日本—羊蹄山 • 2024/01/24 ",
+    fit: "cover",
+    position: "50% 45%",
+  },
+  {
+    image: "/images/banner05.jpg",
+    text: "日落後，要好好休息喔 ｜泰國餐廳 • 2025/08/11 ",
+    fit: "cover",
+    position: "50% 50%",
+  }
+];
+
+const banner = banners[Math.floor(Math.random() * banners.length)];
+---
+
+<Layout title="home">
+    <HeroSection banner={banner} client:load />
+    <BioSection />
+    <ExperienceSection client:load />
+    <ProjectSection />
+    <ContactSection />
+</Layout>

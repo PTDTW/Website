@@ -1,0 +1,47 @@
+---
+const { title = "My Site" } = Astro.props;
+
+import "../style/App.css";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <style is:global>
+            html {
+                background-color: #050505;
+                visibility: hidden;
+            }
+
+            html[data-mastercss-ready="true"] {
+                visibility: visible;
+            }
+        </style>
+
+        <script type="module">
+            const reveal = () => {
+                document.documentElement.setAttribute("data-mastercss-ready", "true");
+            };
+
+            try {
+                await import("@master/css");
+                reveal();
+            } catch (error) {
+                console.warn("Master CSS failed to load, showing the page with fallback styling.", error);
+                reveal();
+            }
+
+            window.setTimeout(reveal, 1500);
+        </script>
+    </head>
+    <body>
+        <main class="flex:1 mx:20% mx:5%@<md">
+            <slot />
+        </main>
+    </body>
+</html>
