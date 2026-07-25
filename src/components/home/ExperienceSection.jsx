@@ -30,7 +30,7 @@ const ExperienceSectionCard = [
     subtitle: "三重商工班聯會",
     desc: "曾經參加本校三重商工班級聯合會，積極協助校內事務以及學權參與。",
     image: "/Experience/scvs.jpg",
-    position: "right",
+    position: "top",
     rwdPosition: "50% 20%"
   },
 ];
