@@ -1,7 +1,6 @@
 import React from "react";
-import SectionTitle from "./SectionTitle";
 
-const ProjectCards = [
+const defaultProjectCards = [
   {
     title: "Twcampus",
     subtitle: "首席公關",
@@ -52,7 +51,7 @@ const ProjectCards = [
   },
 ];
 
-const ProjectSection = () => {
+const ProjectSection = ({ cards = defaultProjectCards }) => {
   return (
     <div className="bg:#121212 font:#fff mt:5px py:22px px:22px rb:10px">
       <div className="font-weight:bold bl:3px|solid|#fff pl:8px f:18px">
@@ -62,7 +61,7 @@ const ProjectSection = () => {
       <div className="mt:18px"></div>
       <div className="project-grid grid gap:12px">
         {
-          ProjectCards.map((card, i) => (
+          cards.map((card, i) => (
             <div
               key={i}
               className="rel overflow:hidden r:22px cursor:pointer translateY(-16px):hover ~all|0.4s"
@@ -74,6 +73,9 @@ const ProjectSection = () => {
 
               <img
                 src={card.image}
+                alt={card.title}
+                loading="lazy"
+                decoding="async"
                 className="abs inset:0 w:full h:full object-fit:cover" />
               <div
                 className="abs inset:0"

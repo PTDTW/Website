@@ -1,46 +1,178 @@
 ---
+import { getImage } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
-// home componenets
+// home components
 import HeroSection from "../components/home/HeroSection";
 import BioSection from "../components/home/BioSection";
 import ExperienceSection from "../components/home/ExperienceSection";
 import ProjectSection from "../components/home/ProjectSection";
+import ActivitySection from "../components/home/ActivitySection";
 import ContactSection from "../components/home/ContactSection";
 
+import bannerImage from "../assets/images/banner.jpg";
+import banner02Image from "../assets/images/banner02.png";
+import banner03Image from "../assets/images/banner03.jpg";
+import banner04Image from "../assets/images/banner04.jpg";
+import banner05Image from "../assets/images/banner05.jpg";
+import avatar06Image from "../assets/images/Avatars/avatar06.jpg";
+import avatar05BgImage from "../assets/images/Avatars/avatar05-bg.png";
+import experienceVsrImage from "../assets/images/Experience/vsr.jpg";
+import experienceGapcImage from "../assets/images/Experience/gapc.jpg";
+import experienceScvsImage from "../assets/images/Experience/scvs.jpg";
+import projectTwcampusImage from "../assets/images/Project/twcampus.png";
+import projectKaobarImage from "../assets/images/Project/kaobar.png";
+import projectVsrImage from "../assets/images/Project/vsr.jpg";
+import projectProfolioImage from "../assets/images/Project/profolio.png";
+import projectDataspareImage from "../assets/images/Project/dataspare.png";
+import projectScienceImage from "../assets/images/Project/science.jpg";
+import dataBanner01Image from "../assets/images/data_banner01.jpg";
+import dataBanner02Image from "../assets/images/data_banner02.jpg";
+
+const optimizeImage = async (src: any, width: number) => {
+  const image = await getImage({ src, width, format: "webp", quality: 80 });
+  return image.src;
+};
+
+const optimizedBanner = await optimizeImage(bannerImage, 1600);
+const optimizedBanner02 = await optimizeImage(banner02Image, 1600);
+const optimizedBanner03 = await optimizeImage(banner03Image, 1600);
+const optimizedBanner04 = await optimizeImage(banner04Image, 1600);
+const optimizedBanner05 = await optimizeImage(banner05Image, 1600);
+const optimizedAvatar06 = await optimizeImage(avatar06Image, 400);
+const optimizedAvatar05Bg = await optimizeImage(avatar05BgImage, 400);
+const optimizedExperienceVsr = await optimizeImage(experienceVsrImage, 1400);
+const optimizedExperienceGapc = await optimizeImage(experienceGapcImage, 1400);
+const optimizedExperienceScvs = await optimizeImage(experienceScvsImage, 1400);
+const optimizedProjectTwcampus = await optimizeImage(projectTwcampusImage, 1200);
+const optimizedProjectKaobar = await optimizeImage(projectKaobarImage, 1200);
+const optimizedProjectVsr = await optimizeImage(projectVsrImage, 1200);
+const optimizedProjectProfolio = await optimizeImage(projectProfolioImage, 1200);
+const optimizedProjectDataspare = await optimizeImage(projectDataspareImage, 1200);
+const optimizedProjectScience = await optimizeImage(projectScienceImage, 1200);
+const optimizedDataBanner01 = await optimizeImage(dataBanner01Image, 1200);
+const optimizedDataBanner02 = await optimizeImage(dataBanner02Image, 1200);
 
 const banners = [
   {
-    image: "/images/banner.webp",
+    image: optimizedBanner,
     text: "傳遞的不只是知識，而是下一個可能 ｜「從故事開始的理財課」新北技職vsr計畫 • 2026/04/15。",
     fit: "cover",
     position: "50% 50%",
   },
   {
-    image: "/images/banner02.png",
+    image: optimizedBanner02,
     text: "緣分總是令人欣慰又感嘆 ｜「曾經」與好友一同遊玩的Minecraft伺服器剪影 • 2024/06/19",
     fit: "cover",
     position: "50% 50%",
   },
   {
-    image: "/images/banner03.jpg",
+    image: optimizedBanner03,
     text: "前進，永遠都不是一夕之間｜ptd.study讀書帳，圖片 • 2025/10/06 ",
     fit: "cover",
     position: "50% 70%",
   },
   {
-    image: "/images/banner04.jpg",
+    image: optimizedBanner04,
     text: "旻，讓人想起無邊的天際 ｜日本—羊蹄山 • 2024/01/24 ",
     fit: "cover",
     position: "50% 45%",
   },
   {
-    image: "/images/banner05.jpg",
+    image: optimizedBanner05,
     text: "日落後，要好好休息喔 ｜泰國餐廳 • 2025/08/11 ",
     fit: "cover",
     position: "50% 50%",
   }
 ];
+
+const projectCards = [
+  {
+    title: "Twcampus",
+    subtitle: "首席公關",
+    desc: "與朋友共同合夥，扮演公關角色，學習如何處理合作以及對外形象管理等相關實務。",
+    image: optimizedProjectTwcampus,
+    col: 2,
+    row: 2,
+  },
+  {
+    title: "會考霸｜KaoBar",
+    subtitle: "透過合作製作多媒體影片",
+    desc: "繪本與情境教學計畫。",
+    image: optimizedProjectKaobar,
+    col: 1,
+    row: 2,
+  },
+  {
+    title: "從說故事開始的理財課",
+    subtitle: "透過繪本故事以及話劇課程，教導國小生著作權觀念。",
+    desc: "學習歷程展示平台。",
+    image: optimizedProjectVsr,
+    col: 1,
+    row: 1,
+  },
+  {
+    title: "一個月的數位斷食",
+    subtitle: "自主學習成果",
+    desc: "學生創作者團隊。",
+    image: optimizedProjectProfolio,
+    col: 1,
+    row: 2,
+  },
+  {
+    title: "Datasphere 官網",
+    subtitle: "協助一間託管公司開發官網",
+    desc: "學生自治與公共參與。",
+    image: optimizedProjectDataspare,
+    col: 1,
+    row: 1,
+  },
+  {
+    title: "第六十四屆全國科展",
+    subtitle: "曾經嘗試學習理化並實際進行實驗.",
+    desc: "第六十四屆全國科展",
+    image: optimizedProjectScience,
+    col: 2,
+    row: 1,
+  },
+];
+
+const experienceCards = [
+  {
+    title: "社會責任教育",
+    subtitle: "新北市技職vsr計畫",
+    desc: "熱衷於教育、程式開發與社會責任，希望透過技術創造更多價值。",
+    image: optimizedExperienceVsr,
+    position: "center",
+    rwdPosition: "50% 20%"
+  },
+  {
+    title: "學檔教育",
+    subtitle: "第六屆金質歷程獎",
+    desc: "透過第六屆金質歷程獎的機會，在台上重新介紹個人學習歷程得獎作品，並講述歷程以及心得感想。",
+    image: optimizedExperienceGapc,
+    position: "center",
+    rwdPosition: "50% 50%"
+  },
+  {
+    title: "學生自治",
+    subtitle: "三重商工班聯會",
+    desc: "曾經參加本校三重商工班級聯合會，積極協助校內事務以及學權參與。",
+    image: optimizedExperienceScvs,
+    position: "top",
+    rwdPosition: "50% 20%"
+  },
+];
+
+const avatars = {
+  front: optimizedAvatar06,
+  back: optimizedAvatar05Bg,
+};
+
+const activityImages = {
+  banner01: optimizedDataBanner01,
+  banner02: optimizedDataBanner02,
+};
 
 const banner = banners[Math.floor(Math.random() * banners.length)];
 ---
@@ -48,7 +180,8 @@ const banner = banners[Math.floor(Math.random() * banners.length)];
 <Layout title="home">
     <HeroSection banner={banner} client:load />
     <BioSection />
-    <ExperienceSection client:load />
-    <ProjectSection />
-    <ContactSection />
+    <ExperienceSection cards={experienceCards} client:load />
+    <ProjectSection cards={projectCards} />
+    <ActivitySection images={activityImages} />
+    <ContactSection images={activityImages} />
 </Layout>

@@ -29,7 +29,9 @@ const ExperienceData = [
   }
 ];
 
-const ContactSection = () => {
+const ContactSection = ({ images = {} }) => {
+  const { banner01, banner02 } = images;
+
   return (
     <>
       <div
@@ -47,7 +49,10 @@ const ContactSection = () => {
             <div className="rel flex:1 overflow:hidden r:18px  translateY(-16px):hover ~all|0.4s">
 
               <img
-                src="/images/data_banner01.jpg"
+                src={banner01}
+                alt="計畫參與活動圖片"
+                loading="lazy"
+                decoding="async"
                 className="w:full h:240px object-fit:cover"
               />
 
@@ -94,7 +99,10 @@ const ContactSection = () => {
             <div className="rel flex:1 overflow:hidden r:18px  translateY(-16px):hover ~all|0.4s">
 
               <img
-                src="/images/data_banner02.jpg"
+                src={banner02}
+                alt="教育經驗圖片"
+                loading="lazy"
+                decoding="async"
                 className="w:full h:240px object-fit:cover"
               />
 

@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect, useLayoutEffect, useRef } from "react";
 // import SectionTitle from "./SectionTitle";
 
-const ExperienceSectionCard = [
+const defaultExperienceCards = [
   // {
   //   title: "會考資源平台",
   //   subtitle: "會考霸｜KaoBar",
@@ -35,7 +35,7 @@ const ExperienceSectionCard = [
   },
 ];
 
-const ExperienceSection = () => {
+const ExperienceSection = ({ cards = defaultExperienceCards }) => {
   const [active, setActive] = useState(null);
 
   return (
@@ -48,7 +48,7 @@ const ExperienceSection = () => {
         <div
           className="flex flex:col@<md gap:12px h:320px h:800px@<md"
         >
-          {ExperienceSectionCard.map((card, i) => (
+          {cards.map((card, i) => (
             <div
               key={i}
               className="rel overflow:hidden r:18px cursor:pointer"
@@ -72,6 +72,9 @@ const ExperienceSection = () => {
               {/* Image */}
               <img
                 src={card.image}
+                alt={card.title}
+                loading="lazy"
+                decoding="async"
                 className="abs inset:0 w:full h:full object-fit:cover"
                 style={{
                   "--object-position": card.position,
