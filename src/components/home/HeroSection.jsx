@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 
-const HeroSection = ({ banner }) => {
+const HeroSection = ({ banners }) => {  
+  const [banner] = useState(
+    () => banners[Math.floor(Math.random() * banners.length)]
+  );
   const [hoverName, setHoverName] = useState(false);
   const [expand, setExpand] = useState(false);
   return (

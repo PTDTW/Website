@@ -174,14 +174,14 @@ const activityImages = {
   banner02: optimizedDataBanner02,
 };
 
-const banner = banners[Math.floor(Math.random() * banners.length)];
+// const banner = banners[Math.floor(Math.random() * banners.length)];
 ---
 
 <Layout title="home">
-    <HeroSection banner={banner} client:load />
+    <HeroSection banners={banners} client:load />
     <BioSection />
     <ExperienceSection cards={experienceCards} client:load />
     <ProjectSection cards={projectCards} />
-    <ActivitySection images={activityImages} />
+    <!-- <ActivitySection images={activityImages} /> -->
     <ContactSection images={activityImages} />
 </Layout>
