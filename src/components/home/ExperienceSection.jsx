@@ -15,7 +15,8 @@ const defaultExperienceCards = [
     desc: "熱衷於教育、程式開發與社會責任，希望透過技術創造更多價值。",
     image: "/Experience/vsr.jpg",
     position: "center",
-    rwdPosition: "50% 20%"
+    rwdPosition: "50% 20%",
+    href: "#"
   },
   {
     title: "學檔教育",
@@ -23,7 +24,8 @@ const defaultExperienceCards = [
     desc: "透過第六屆金質歷程獎的機會，在台上重新介紹個人學習歷程得獎作品，並講述歷程以及心得感想。",
     image: "/Experience/gapc.jpg",
     position: "center",
-    rwdPosition: "50% 50%"
+    rwdPosition: "50% 50%",
+    href: "https://youtu.be/ABtvFy_uqJg?si=V_Osy2JVcWlCj9wN"
   },
   {
     title: "學生自治",
@@ -31,7 +33,8 @@ const defaultExperienceCards = [
     desc: "曾經參加本校三重商工班級聯合會，積極協助校內事務以及學權參與。",
     image: "/Experience/scvs.jpg",
     position: "top",
-    rwdPosition: "50% 20%"
+    rwdPosition: "50% 20%",
+    href: "#"
   },
 ];
 
@@ -52,6 +55,11 @@ const ExperienceSection = ({ cards = defaultExperienceCards }) => {
             <div
               key={i}
               className="rel overflow:hidden r:18px cursor:pointer"
+              onClick={() => {
+                if (card.href && card.href !== "#") {
+                  window.open(card.href, "_blank", "noopener,noreferrer");
+                }
+              }}
               onMouseEnter={() => setActive(i)}
               onMouseLeave={() => setActive(null)}
               style={{
