@@ -8,6 +8,7 @@ const defaultProjectCards = [
     image: "/Project/twcampus.png",
     col: 2,
     row: 2,
+    href: "https://twcampus.org/"
   },
   {
     title: "會考霸｜KaoBar",
@@ -16,6 +17,7 @@ const defaultProjectCards = [
     image: "/Project/kaobar.png",
     col: 1,
     row: 2,
+    href: "https://www.instagram.com/the_pros_with_bros/reel/DM66Fbvz1Ld/"
   },
   {
     title: "從說故事開始的理財課",
@@ -24,6 +26,7 @@ const defaultProjectCards = [
     image: "/Project/vsr.jpg",
     col: 1,
     row: 1,
+    href: "https://youtu.be/MHcHgKlKR8k?si=bRXTVA7AFDVhJHR2"
   },
   {
     title: "一個月的數位斷食",
@@ -32,6 +35,7 @@ const defaultProjectCards = [
     image: "/Project/profolio.png",
     col: 1,
     row: 2,
+    href: "https://twpea.org/wp-content/uploads/2026/07/CG000001%E8%87%AA%E4%B8%BB%E5%AD%B8%E7%BF%92%E6%88%90%E6%9E%9C%E6%8A%80%E9%AB%98%E7%B5%84_%E5%B8%82%E7%AB%8B%E4%B8%89%E9%87%8D%E5%95%86%E5%B7%A5_%E5%94%90%E5%90%8C%E5%AD%B8_%E3%80%8C%E8%87%AA%E4%B8%BB%E5%AD%B8%E7%BF%92%E6%88%90%E6%9E%9C%E3%80%8D%E4%B8%80%E5%80%8B%E6%9C%88%E7%9A%84%E6%95%B8%E4%BD%8D%E6%96%B7%E9%A3%9F.pdf"
   },
   {
     title: "Datasphere 官網",
@@ -40,6 +44,7 @@ const defaultProjectCards = [
     image: "/Project/dataspare.png",
     col: 1,
     row: 1,
+    href: "https://datasphere.studio/"
   },
   {
     title: "第六十四屆全國科展",
@@ -48,6 +53,7 @@ const defaultProjectCards = [
     image: "/Project/science.jpg",
     col: 2,
     row: 1,
+    href: "https://www.ntsec.edu.tw/science/detail.aspx?a=90&cat=136&sid=21676"
   },
 ];
 
@@ -68,6 +74,11 @@ const ProjectSection = ({ cards = defaultProjectCards }) => {
               style={{
                 gridColumn: `span ${card.col}`,
                 gridRow: `span ${card.row}`,
+              }}
+              onClick={() => {
+                if (card.href && card.href !== "#") {
+                  window.open(card.href, "_blank", "noopener,noreferrer");
+                }
               }}
             >
 
